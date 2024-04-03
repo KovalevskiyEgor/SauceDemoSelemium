@@ -1,8 +1,7 @@
 package test;
 
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import page.*;
 import utils.Asserter;
 
