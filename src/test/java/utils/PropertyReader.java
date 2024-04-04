@@ -1,7 +1,6 @@
 package utils;
 
 import lombok.extern.java.Log;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -13,7 +12,6 @@ public class PropertyReader {
     public PropertyReader(String fileName) {
         properties = appendFromResource(fileName);
     }
-
     private Properties appendFromResource(String resourceName) {
         Properties properties = new Properties();
 
@@ -25,12 +23,14 @@ public class PropertyReader {
         }
         return properties;
     }
-
     public String getProperty(String key) {
         return properties.getProperty(key);
     }
     public long getLongProperty(String key) {
         return Long.parseLong(properties.getProperty(key));
+    }
+    public void setValue(String key, String value){
+        properties.setProperty(key, value);
     }
 
 }

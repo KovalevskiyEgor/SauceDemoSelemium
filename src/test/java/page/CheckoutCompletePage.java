@@ -1,8 +1,7 @@
 package page;
 
 import lombok.extern.java.Log;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
 
 @Log

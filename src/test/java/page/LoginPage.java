@@ -1,20 +1,13 @@
 package page;
 
 import lombok.extern.java.Log;
-import lombok.extern.log4j.Log4j;
-import lombok.extern.log4j.Log4j2;
-import lombok.extern.slf4j.Slf4j;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.*;
 import org.openqa.selenium.support.ui.*;
-
+import org.testng.Assert;
 import java.time.Duration;
-
 @Log
 public class LoginPage extends BasePage{
-
     @FindBy(xpath = "//input[@placeholder=\"Username\"]")
     private WebElement loginField;
 
@@ -28,7 +21,6 @@ public class LoginPage extends BasePage{
         PageFactory.initElements(driver,this);
         driver.get(propertyReader.getProperty("base.URL"));
     }
-
     public void login(){
         driver.manage().deleteAllCookies();
         passwordField.clear();
@@ -48,7 +40,6 @@ public class LoginPage extends BasePage{
         passwordField.sendKeys(password);
         loginButton.click();
     }
-
     public boolean checkAnotherCredentials(String login, String password){
         try {
             loginField.sendKeys(login);
@@ -59,5 +50,8 @@ public class LoginPage extends BasePage{
         }catch (Exception e){
             return false;
         }
+    }
+    public void assertWrongCredentials(String login, String password){
+        Assert.assertTrue(checkAnotherCredentials(login,password));
     }
 }

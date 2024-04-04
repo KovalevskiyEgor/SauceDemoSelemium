@@ -1,9 +1,9 @@
 package page;
 
 import lombok.extern.java.Log;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
+import org.testng.Assert;
 
 @Log
 public class ItemPage extends BasePage{
@@ -28,11 +28,16 @@ public class ItemPage extends BasePage{
     public boolean checkIfItemAdded(){
         try {
             WebElement element = driver.findElement(By.xpath("//span[@class=\"shopping_cart_badge\"]"));
-            driver.findElement(By.id("remove"));
             return element.getText().equals("1");
         }catch (Exception e){
             log.warning(e.getMessage());
             return false;
         }
+    }
+    public boolean checkIfButtonDisplayed(){
+        return driver.findElement(By.id("remove")).isDisplayed();
+    }
+    public void assertIfItemAdded(){
+        Assert.assertTrue(checkIfItemAdded());
     }
 }
