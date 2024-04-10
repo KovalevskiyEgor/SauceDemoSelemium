@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import lombok.extern.java.Log;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
@@ -19,6 +20,7 @@ public class LoginPage extends BasePage{
     public LoginPage() {
         PageFactory.initElements(driver,this);
     }
+    @Step("логинимся")
     public void login(){
         passwordField.clear();
         loginField.clear();

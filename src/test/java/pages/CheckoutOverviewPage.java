@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import lombok.extern.java.Log;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
@@ -22,6 +23,8 @@ public class CheckoutOverviewPage extends BasePage{
     public CheckoutOverviewPage(){
         PageFactory.initElements(driver, this);
     }
+
+    @Step("Покупаем")
     public void finish(){
         finishButton.click();
     }

@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import lombok.extern.java.Log;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
@@ -15,11 +16,12 @@ public class ItemPage extends BasePage{
     public ItemPage (){
         PageFactory.initElements(driver, this);
     }
-
+    @Step("добавляем в корзину")
     public void addToCard(){
         addToCardButton.click();
     }
 
+    @Step("перейти в корзину")
     public void goToCard(){
         basketButton.click();
     }

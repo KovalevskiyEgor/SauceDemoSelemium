@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import lombok.extern.java.Log;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
@@ -33,6 +34,7 @@ public class CheckoutCompletePage extends BasePage {
             return false;
         }
     }
+    @Step("переходим обратно на страницу с вещами")
     public void goBackToProducts(){
         backToProductsButton.click();
     }

@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.*;
 
@@ -29,7 +30,8 @@ public class CheckoutPage extends BasePage{
     public void insertPostalCode(String postalCode){
         postalCodeField.sendKeys(postalCode);
     }
-    public void continuee(){
+    @Step("переходим на страницу с деталями заказа")
+    public void clickOnContinueButton(){
         continueButton.click();
     }
 }

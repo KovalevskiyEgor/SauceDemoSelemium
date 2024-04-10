@@ -1,5 +1,9 @@
 package test;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
@@ -7,6 +11,9 @@ import pages.*;
 import utils.Asserter;
 public class SaucedemoTest extends BaseTest{
     @Test
+    @Owner("Ковалевский Егор")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("е2е тестируем sauce demo")
     @Parameters({"wrongPassword","wrongLogin"})
     public void test(String wrongPassword, String wrongLogin){
         Asserter asserter = new Asserter();
@@ -33,7 +40,7 @@ public class SaucedemoTest extends BaseTest{
         checkoutPage.insertFirstname(BasePage.propertyReader.getProperty("person.firstname"));
         checkoutPage.insertLastname(BasePage.propertyReader.getProperty("person.lastname"));
         checkoutPage.insertPostalCode(BasePage.propertyReader.getProperty("person.postalcode"));
-        checkoutPage.continuee();
+        checkoutPage.clickOnContinueButton();
 
         CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage();
         Assert.assertTrue(asserter.checkIfElementInCart()); //проверка на наличие вещи в корзине и что это именно тот элемент
