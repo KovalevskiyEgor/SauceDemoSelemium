@@ -1,4 +1,4 @@
-package page;
+package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.*;
@@ -32,5 +32,4 @@ public class CheckoutPage extends BasePage{
     public void continuee(){
         continueButton.click();
     }
-
 }

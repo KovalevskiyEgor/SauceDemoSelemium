@@ -1,4 +1,4 @@
-package page;
+package pages;
 
 import lombok.extern.java.Log;
 import org.openqa.selenium.*;

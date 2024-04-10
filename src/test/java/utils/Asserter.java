@@ -2,8 +2,7 @@ package utils;
 
 import lombok.extern.java.Log;
 import org.openqa.selenium.By;
-import org.testng.Assert;
-import page.BasePage;
+import pages.BasePage;
 
 @Log
 public class Asserter extends BasePage {
@@ -18,5 +17,4 @@ public class Asserter extends BasePage {
             return false;
         }
     }
-
 }

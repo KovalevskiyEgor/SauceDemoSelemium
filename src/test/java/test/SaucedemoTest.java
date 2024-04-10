@@ -3,7 +3,7 @@ package test;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
-import page.*;
+import pages.*;
 import utils.Asserter;
 public class SaucedemoTest extends BaseTest{
     @Test

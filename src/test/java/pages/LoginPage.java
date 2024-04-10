@@ -1,10 +1,9 @@
-package page;
+package pages;
 
 import lombok.extern.java.Log;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
 import org.openqa.selenium.support.ui.*;
-import org.testng.Assert;
 import java.time.Duration;
 @Log
 public class LoginPage extends BasePage{
@@ -19,10 +18,8 @@ public class LoginPage extends BasePage{
 
     public LoginPage() {
         PageFactory.initElements(driver,this);
-        driver.get(propertyReader.getProperty("base.URL"));
     }
     public void login(){
-        driver.manage().deleteAllCookies();
         passwordField.clear();
         loginField.clear();
 
@@ -50,8 +47,5 @@ public class LoginPage extends BasePage{
         }catch (Exception e){
             return false;
         }
-    }
-    public void assertWrongCredentials(String login, String password){
-        Assert.assertTrue(checkAnotherCredentials(login,password));
     }
 }

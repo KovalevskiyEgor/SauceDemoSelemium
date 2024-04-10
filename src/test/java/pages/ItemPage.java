@@ -1,9 +1,8 @@
-package page;
+package pages;
 
 import lombok.extern.java.Log;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
-import org.testng.Assert;
 
 @Log
 public class ItemPage extends BasePage{
@@ -36,8 +35,5 @@ public class ItemPage extends BasePage{
     }
     public boolean checkIfButtonDisplayed(){
         return driver.findElement(By.id("remove")).isDisplayed();
-    }
-    public void assertIfItemAdded(){
-        Assert.assertTrue(checkIfItemAdded());
     }
 }

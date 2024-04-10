@@ -32,6 +32,4 @@ public class PropertyReader {
     public void setValue(String key, String value){
         properties.setProperty(key, value);
     }
-
 }
-
