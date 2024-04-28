@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.*;
 
 public class CartPage extends BasePage{
-    @FindBy(xpath = "//button[@id=\"eckout\"]")
+    @FindBy(xpath = "//button[@id=\"checkout\"]")
     private WebElement checkoutButton;
 
     public CartPage (){
