@@ -16,7 +16,6 @@ public class ProductsPage extends BasePage{
         int randomNumber = rand.nextInt(5);
         WebElement item  =  items.get(randomNumber);
         BasePage.propertyReader.setValue("item.name",item.getText());
-        log.info("Название рандомной вещи - "+BasePage.propertyReader.getProperty("item.name"));
         item.click();
     }
 }

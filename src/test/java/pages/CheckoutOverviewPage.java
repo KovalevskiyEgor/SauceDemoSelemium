@@ -35,8 +35,6 @@ public class CheckoutOverviewPage extends BasePage{
         double originalPrice = Double.parseDouble(originalPriceWebElement.getText().split("\\$")[1].trim());
         double result = itemTotalPrice+taxPrice;
         String stringResult = String.valueOf(result).substring(0,String.valueOf(result).indexOf(".")+3);
-        log.info("ПРОВЕРКА ЦЕНЫ: цена товара+налог: "+ (itemTotalPrice)+"+"+(taxPrice)+"=="+(stringResult));
-        log.info(itemTotalPrice+"=="+originalPrice);
         return (itemTotalPrice==originalPrice&&totalPrice==Double.parseDouble(stringResult));
     }
 }

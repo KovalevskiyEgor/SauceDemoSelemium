@@ -31,8 +31,6 @@ public class LoginPage extends BasePage{
 
         String password = driver.findElement(By.className("login_password")).getText().split(":")[1].trim();
         String login = driver.findElement(By.xpath("//div[@class='login_credentials']")).getText().split(":")[1].split("\n")[1];
-        log.info("password = " + password);
-        log.info("login = " + login);
 
         loginField.sendKeys(login);
         passwordField.clear();

@@ -17,10 +17,8 @@ public class CheckoutCompletePage extends BasePage {
     public boolean checkIfBasketIsEmpty(){
         try {
             driver.findElement(By.xpath("//span[@class=\"shopping_cart_badge\"]"));
-            log.info("КОРЗИНА ПОСЛЕ ЗАКАЗА ПУСТА:" +false);
             return false;
         }catch (Exception e){
-            log.info("КОРЗИНА ПОСЛЕ ЗАКАЗА ПУСТА:" +true);
             return true;
         }
     }
@@ -28,7 +26,6 @@ public class CheckoutCompletePage extends BasePage {
         try {
             String text = driver.findElement(By.xpath("//div[@class=\"complete-text\"]")).getText();
             boolean isOrderSuccess = text.equals("Your order has been dispatched, and will arrive just as fast as the pony can get there!");
-            log.info("\nСРАВНЕНИЕ ТЕКСТА ПРИ УСПЕШНОМ ЗАКАЗЕ:"+isOrderSuccess);
             return isOrderSuccess;
         }catch (Exception e){
             return false;

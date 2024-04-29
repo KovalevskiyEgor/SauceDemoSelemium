@@ -10,7 +10,6 @@ public class Asserter extends BasePage {
         try {
             driver.findElement(By.xpath("//div[@class=\"cart_item\"]"));
             driver.findElement(By.xpath(String.format("//div[contains(text(),\"%s\")]",propertyReader.getProperty("item.name"))));
-            log.info("проверка "+propertyReader.getProperty("item.name"));
             return true;
         }catch (Exception e){
             log.warning(e.getMessage());
